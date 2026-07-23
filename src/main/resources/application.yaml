@@ -1,19 +1,23 @@
 spring:
   datasource:
-    # Railway provides the full URL, Username, and Password automatically
+    # Railway environment variables
     url: ${MYSQL_URL}
     username: ${MYSQLUSER}
     password: ${MYSQLPASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
+      # Automatically creates/updates tables based on your Java Entities
       ddl-auto: update
     show-sql: true
     properties:
       hibernate:
-        # Use a modern dialect for MySQL 8+
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        # FIX: Using the generic MySQLDialect works for all versions 8+
+        # and avoids the "Unable to resolve name" error.
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
 
-# Optional: Ensure the server port is set by Railway
+# Railway uses a dynamic port. This line is CRITICAL for the app to stay "Online"
 server:
   port: ${PORT:8080}
