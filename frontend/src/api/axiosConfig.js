@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8080/api',
+    // IMPORTANT: No 'localhost' here anymore!
+    baseURL: 'https://hotelbooking-production-9fc9.up.railway.app/api',
 });
 
-// This automatically adds the JWT token to every request if it exists
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
     if (token) {
