@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    // IMPORTANT: No 'localhost' here anymore!
+    // Replace this URL with your actual Railway Backend URL
     baseURL: 'https://hotelbooking-production-9fc9.up.railway.app/api',
 });
 
