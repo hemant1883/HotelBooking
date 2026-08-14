@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
     // Replace this URL with your actual Railway Backend URL
-   baseURL: 'https://hotelbooking-lhsr.onrender.com',
+   baseURL: 'https://hotelbooking-lhsr.onrender.com/api',
 });
 
 api.interceptors.request.use((config) => {
