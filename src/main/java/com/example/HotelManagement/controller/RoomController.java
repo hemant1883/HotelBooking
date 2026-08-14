@@ -14,6 +14,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/rooms")
 @RequiredArgsConstructor
+    @CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://hotel-booking-gamma-liart.vercel.app"
+})
 public class RoomController {
 
     private final RoomService roomService;
