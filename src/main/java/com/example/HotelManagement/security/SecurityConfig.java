@@ -80,10 +80,10 @@ public class    SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         // Allow EVERYTHING for testing, or list specifically:
-        configuration.setAllowedOrigins(Arrays.asList(
-                "http://localhost:5173",
-                "https://humorous-benevolence-production-095f.up.railway.app"
-        ));
+       configuration.setAllowedOrigins(Arrays.asList(
+    "http://localhost:5173",
+    "https://hotel-booking-gamma-liart.vercel.app"
+));
 
         // This ensures all standard browser headers and methods are allowed
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
