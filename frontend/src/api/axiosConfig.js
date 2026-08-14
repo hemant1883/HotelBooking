@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
     // Replace this URL with your actual Railway Backend URL
-    baseURL: 'https://hotelbooking-production-9fc9.up.railway.app/api',
+   baseURL: import.meta.env.VITE_API_URL
 });
 
 api.interceptors.request.use((config) => {
